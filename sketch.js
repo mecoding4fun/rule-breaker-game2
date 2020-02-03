@@ -165,6 +165,9 @@ function draw() {
     police.bounceOff(border_left);
       police.bounceOff(border_right);
   
+      culprit_1.bounceOff(border_left);
+      culprit_1.bounceOff(border_right);
+  
        if( culprit_1.isTouching(border_top)||culprit_1.isTouching(border_down)
 ){
     GameState = END;   
