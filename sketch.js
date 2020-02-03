@@ -1,6 +1,6 @@
 var police,police_img,police_left;
 var culprit_1,culprit_stand_img,culprit_left_img_1,boy_stand;
-var border_left,border_right,border_up,border_down;
+var border_left,border_right,border_up,border_down,border_right_sl;
 var backround,background_img;
 var Story = 2;
 var PLAY = 1;
@@ -58,12 +58,15 @@ function setup() {
   reset.visible = false;
   
   
-  border_left = createSprite(width/width+30,height/2-100,450,3);
+  border_left = createSprite(width/width+30,height/2-100,1250,3);
      border_left.visible  = false;
 
 
-border_right = createSprite(width-210,height/4-50,3,250);
+border_right = createSprite(width-450,height/4-50,3,250);
+  border_right_sl = createSprite(width-110,height/4+100,700,3)
      border_right.visible  = false;
+       border_right_sl.visible  = false;
+
 
   border_top = createSprite(width/2+30,height/4-50,150,3);
      border_top.visible  = false;
@@ -163,10 +166,14 @@ function draw() {
     police.bounceOff(border_top);
 
     police.bounceOff(border_left);
-      police.bounceOff(border_right);
+      police.bounceOff(border_right);  
+          police.bounceOff(border_right_sl);
+
   
       culprit_1.bounceOff(border_left);
       culprit_1.bounceOff(border_right);
+        culprit_1.bounceOff(border_right_sl);
+
   
        if( culprit_1.isTouching(border_top)||culprit_1.isTouching(border_down)
 ){
