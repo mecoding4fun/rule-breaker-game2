@@ -300,6 +300,8 @@ function draw() {
     print(culprit_Velocity);
     print(culprit_1.velocityX);
     culprit_1.velocityX = random(-10,10);
+    culprit_1.velocityY = random(-10,10);
+
     police.velocityX = random(-5,5);
     police.velocityY = random(-5,5);
 
