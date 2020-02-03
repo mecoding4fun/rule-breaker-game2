@@ -183,7 +183,7 @@ function draw() {
   
   textSize(15);
         fill(255,255,255); 
-    text("Fine collected: "+ score, 500,50);
+//     text("Fine collected: "+ score, 500,50);
 
 
   
@@ -294,6 +294,8 @@ function draw() {
     print(culprit_Velocity);
     print(culprit_1.velocityX);
     culprit_1.velocityX = random(-10,10);
+    culprit_1.velocityY = random(-10,10);
+
     police.velocityX = random(-5,5);
     police.velocityY = random(-5,5);
 
