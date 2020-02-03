@@ -74,10 +74,7 @@ border_right = createSprite(width-210,height/4-50,3,250);
   continue_box = createSprite(width-100,height-75,100,100);
   continue_box.addImage("play",continue_box_img);
   
-  	if (!Cookies.get('highscore')){
-		Cookies.set('highscore', '0');
-	}
-	highScore = Cookies.get('highscore');
+
 
   
   
@@ -375,17 +372,7 @@ GameState = WON;
     
     score = 0;
     
-                      let scoreString = "score: " + score;
-                  text(scoreString, 300, 340);
 
-                  if (score > highScore) {
-                      highScore = score;
-                      Cookies.remove('highscore');
-                      Cookies.set('highscore', highScore);
-                  }
-
-                  let highScoreString = "highscore: " + highScore;
-                  text(highScoreString, 300, 360);
 
 
       fill(255,255,255); 
