@@ -1,6 +1,6 @@
 var police,police_img,police_left;
 var culprit_1,culprit_stand_img,culprit_left_img_1,boy_stand;
-var border_left,border_right,border_up,border_down;
+var border_left,border_right,border_up,border_down,border_right_sl;
 var backround,background_img;
 var Story = 2;
 var PLAY = 1;
@@ -62,8 +62,11 @@ function setup() {
      border_left.visible  = false;
 
 
-border_right = createSprite(width-210,height/4-50,3,250);
+border_right = createSprite(width-410,height/4-50,3,250);
+  border_right_sl = createSprite(width-110,height/4+50,600,3)
      border_right.visible  = false;
+       border_right_sl.visible  = false;
+
 
   border_top = createSprite(width/2+30,height/4-50,150,3);
      border_top.visible  = false;
@@ -168,7 +171,13 @@ function draw() {
     police.bounceOff(border_left);
       police.bounceOff(border_right);
   
-       if( culprit_1.isTouching(border_top)||culprit_1.isTouching(border_down)||culprit_1.isTouching(border_left)||culprit_1.isTouching(border_right)
+        // culprit_1.bounceOff(border_top);
+
+    // culprit_1.bounceOff(border_down);
+    culprit_1.bounceOff(border_left);
+      culprit_1.bounceOff(border_right);
+  
+       if( culprit_1.isTouching(border_top)||culprit_1.isTouching(border_down)||culprit_1.isTouching(border_right)
 ){
     GameState = END;   
        }
@@ -180,7 +189,7 @@ function draw() {
   
   textSize(15);
         fill(255,255,255); 
-//     text("Fine collected: "+ score, 500,50);
+    // text("Fine collected: "+ score, 500,50);
 
 
   
@@ -291,8 +300,6 @@ function draw() {
     print(culprit_Velocity);
     print(culprit_1.velocityX);
     culprit_1.velocityX = random(-10,10);
-    culprit_1.velocityY = random(-10,10);
-
     police.velocityX = random(-5,5);
     police.velocityY = random(-5,5);
 
@@ -372,7 +379,7 @@ GameState = WON;
     
     score = 0;
     
-
+ 
 
 
       fill(255,255,255); 
