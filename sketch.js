@@ -158,17 +158,14 @@ function draw() {
     culprit_2.bounceOff(bottom_edge);
   
     police.bounceOff(right_edge);
-
     police.bounceOff(top_edge);
-    police.bounceOff(bottom_edge);
-  
-      police.bounceOff(border_top);
+    police.bounceOff(bottom_edge);  
+    police.bounceOff(border_top);
 
-    police.bounceOff(border_down);
     police.bounceOff(border_left);
       police.bounceOff(border_right);
   
-       if( culprit_1.isTouching(border_top)||culprit_1.isTouching(border_down)||culprit_1.isTouching(border_left)||culprit_1.isTouching(border_right)
+       if( culprit_1.isTouching(border_top)||culprit_1.isTouching(border_down)
 ){
     GameState = END;   
        }
@@ -347,10 +344,6 @@ function draw() {
 
 
   
-  if (culprit_1.isTouching(vanish_box)){
-GameState = END;
-
-  }   
       if (culprit_1.isTouching(police)){
 GameState = WON;
 
